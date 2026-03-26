@@ -107,25 +107,35 @@ tr:hover td { background: #F8F9FA; }
 tr.group-even td { background: #FAFBFC; }
 tr.group-even:hover td { background: #F1F5F9; }
 
-/* Sticky left columns */
-th.sticky-left, td.sticky-left {
+/* Sticky left columns — body cells */
+td.sticky-left {
   position: sticky; left: 0; z-index: 10;
-  background: inherit;
+  background: #fff;
 }
-td.sticky-left { background: #fff; }
 tr.group-even td.sticky-left { background: #FAFBFC; }
 tr:hover td.sticky-left { background: #F8F9FA; }
 tr.group-even:hover td.sticky-left { background: #F1F5F9; }
-/* second sticky col offset */
-th.sticky-left-2, td.sticky-left-2 {
+td.sticky-left-2 {
   position: sticky; left: 150px; z-index: 10;
-  background: inherit;
+  background: #fff;
   border-right: 2px solid #E2E8F0;
 }
-td.sticky-left-2 { background: #fff; }
 tr.group-even td.sticky-left-2 { background: #FAFBFC; }
 tr:hover td.sticky-left-2 { background: #F8F9FA; }
 tr.group-even:hover td.sticky-left-2 { background: #F1F5F9; }
+/* Sticky left columns — header cells (corner: sticky top + left, highest z-index) */
+thead th.sticky-left {
+  position: sticky; left: 0; z-index: 30;
+  background: #F1F5F9;
+}
+thead th.sticky-left-2 {
+  position: sticky; left: 150px; z-index: 30;
+  background: #F1F5F9;
+  border-right: 2px solid #E2E8F0;
+}
+thead tr.group-header-row th.sticky-left {
+  background: #F1F5F9;
+}
 
 /* Merged cells vertical alignment */
 td[rowspan] { vertical-align: top; font-weight: 600; }
